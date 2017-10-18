@@ -1,0 +1,29 @@
+{
+  "name": "limama-tiny",
+  "version": "1.0.0",
+  "description": "image compression",
+  "bin": {
+    "limama-tiny": "bin/limama-tiny.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liary/limama-tiny.git"
+  },
+  "keywords": [
+    "image",
+    "compress"
+  ],
+  "author": "limama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liary/limama-tiny/issues"
+  },
+  "homepage": "https://github.com/liary/limama-tiny#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-image": "^4.0.0",
+    "gulp-tinypng": "^1.0.2",
+    "cli-color": "^1.1.0",
+    "minimist": "^1.2.0"
+  }
+}

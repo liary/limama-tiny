@@ -1,0 +1,59 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  0.21.3
+
+Node version: 
+  8.7.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "limama-tiny",
+    "version": "1.0.0",
+    "description": "image compression",
+    "bin": {
+      "limama-tiny": "./bin/limama-tiny.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/liary/limama-tiny.git"
+    },
+    "keywords": [
+      "image",
+      "compress"
+    ],
+    "author": "limama",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/liary/limama-tiny/issues"
+    },
+    "homepage": "https://github.com/liary/limama-tiny#readme",
+    "dependencies": {
+      "cli-color": "^1.1.0",
+      "gulp": "^3.9.1",
+      "gulp-image": "^4.0.0",
+      "gulp-imagemin": "^3.4.0",
+      "gulp-tinypng": "^1.0.2",
+      "imagemin-optipng": "^5.2.1",
+      "minimist": "^1.2.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: connect ETIMEDOUT 47.88.240.14:80
+      at Object._errnoException (util.js:1021:11)
+      at _exceptionWithHostPort (util.js:1043:20)
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1175:14)

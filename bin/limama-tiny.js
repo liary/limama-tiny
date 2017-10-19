@@ -15,7 +15,6 @@ function errorExit(msg) {
 	console.error( cliColor.red(msg) );
 	process.exit(1);
 }
-console.log('I\'m here')
 
 var method = argv.method ? String(argv.method).toLowerCase() : 'image';
 // 检查method参数合法性

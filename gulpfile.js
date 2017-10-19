@@ -13,13 +13,13 @@ var method = config.get('method'),
  * 格式处理
  */
 function imgPath(path) {
-	console.log(path)
-	var supportType = ['png', 'jpg', 'jpeg'],
+	var supportType = ['png'],
 		arr = [],
 		path = path.slice(-1) === '/' ? path.slice(0, -1) : path;
-	for (var i = 0; i < supportType; i++) {
-		arr.push(path + '/**.*' + supportType[i]);
+	for (var i = 0; i < supportType.length; i++) {
+		arr.push(path + '/**.' + supportType[i]);
 	}
+	console.log(JSON.stringify(arr));
 	return arr;
 }
 /**
@@ -32,26 +32,26 @@ function imgPath(path) {
 gulp.task('start', function() {
 	var option;
 	if (method === 'image') {
-		imageCompress = require('gulp-image');
-		option = 'gEGeOQwb_G6bM0KnFjevkhOWsj5dNusF';
+		imageCompress = require('gulp-imagemin');
+		// option = [
+		// 	imageCompress.gifsicle({interlaced: true}),
+		// 	imageCompress.jpegtran({progressive: true}),
+		// 	imageCompress.optipng({optimizationLevel: 5}),
+		// 	imageCompress.svgo({
+		// 		plugins: [
+		// 			{removeViewBox: true},
+		// 			{cleanupIDs: false}
+		// 		]
+		// 	})
+		// ]
 	}
 	if (method === 'tiny') {
 		imageCompress = require('gulp-tinypng');
-		option = {
-			pngquant: true,
-			optipng: false,
-			zopflipng: true,
-			jpegRecompress: false,
-			mozjpeg: true,
-			guetzli: false,
-			gifsicle: true,
-			svgo: true,
-			concurrent: 10
-		}
+		option = 'gEGeOQwb_G6bM0KnFjevkhOWsj5dNusF';
 	}
 	gulp.src(imgPath(srcPath))
 	.pipe(imageCompress(option))
-	.pipe(gulp.dest(`${srcPath}/dist-img/`));
+	.pipe(gulp.dest(`${srcPath}/dist-img`));
 });
 
 gulp.task('default', ['start']);
